@@ -1,0 +1,13 @@
+.left-div{
+	float: left;
+	border: medium solid black;
+	
+	
+}
+
+.right-div{
+	margin-left: 20px;
+	float: left;
+	border: medium solid blue;
+	padding: 13px;
+}

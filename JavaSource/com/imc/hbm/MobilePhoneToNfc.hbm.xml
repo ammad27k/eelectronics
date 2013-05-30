@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 6, 2013 10:49:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.imc.framework.bean.MobilePhoneToNfc" table="mobile_phone_to_nfc" catalog="mobilephones">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mobilePhones" class="com.imc.framework.bean.MobilePhones" fetch="select" cascade="all">
+            <column name="phone_id" />
+        </many-to-one>
+        <many-to-one name="mobileNfc" class="com.imc.framework.bean.MobileNfc" fetch="select" cascade="all">
+            <column name="nfc_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

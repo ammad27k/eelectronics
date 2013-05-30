@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 6, 2013 10:49:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.imc.framework.bean.Posts" table="posts" catalog="mobilephones">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="slug" type="string">
+            <column name="slug" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="shortContent" type="string">
+            <column name="short_content" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" />
+        </property>
+        <property name="tags" type="string">
+            <column name="tags" />
+        </property>
+        <property name="postType" type="string">
+            <column name="post_type" length="10" />
+        </property>
+        <property name="addedOn" type="timestamp">
+            <column name="added_on" length="19" not-null="true" />
+        </property>
+        <property name="isActive" type="java.lang.Character">
+            <column name="is_active" length="1" />
+        </property>
+        <property name="isDeleted" type="java.lang.Character">
+            <column name="is_deleted" length="1" />
+        </property>
+        <set name="postsCommentses" table="posts_comments" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="post_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.PostsComments" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/mobilephones</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        
+        <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+       	<property name="show_sql">true</property>
+
+     	<mapping resource="com/imc/hbm/CmsPages.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileUsb.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToGames.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileGprs.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileEdge.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileAlertTypes.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileMemory.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhonePhotos.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileSimTypes.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToMemory.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToCameraPrimary.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileFeatures.hbm.xml" />
+        <mapping resource="com/imc/hbm/AdminUsers.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileGames.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileGps.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileGpu.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileMemoryCardslots.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToRadio.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToSoundFeatures.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToProtections.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileDataSpeeds.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToNetworks.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileColors.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToDataSpeeds.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileNetworks.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToColors.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileBluetooth.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToNfc.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileBrands.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileCameraVideo.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileRadio.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileBrowsers.hbm.xml" />
+        <mapping resource="com/imc/hbm/PostsComments.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileDisplayTypes.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToMemoryCardslots.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileWlan.hbm.xml" />
+        <mapping resource="com/imc/hbm/Categories.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileCameraPrimary.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileSensors.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToJava.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileSoundFeatures.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileJava.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhones.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileCpu.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToCameraVideo.hbm.xml" />
+        <mapping resource="com/imc/hbm/Posts.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileCameraSecondary.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToAlertTypes.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileNfc.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileDisplayProtection.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileSpeeds.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToSensors.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileMessaging.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToCameraSecondary.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToDisplayTypes.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileOs.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileChipsets.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToCameraFeatures.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToFeatures.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToMessaging.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobileCameraFeatures.hbm.xml" />
+        <mapping resource="com/imc/hbm/MobilePhoneToBrowsers.hbm.xml" /> 
+        <mapping resource="com/imc/hbm/MobilePhoneReviews.hbm.xml" /> 
+    </session-factory>
+</hibernate-configuration>

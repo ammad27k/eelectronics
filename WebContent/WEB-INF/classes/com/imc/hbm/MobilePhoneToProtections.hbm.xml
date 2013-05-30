@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 6, 2013 10:49:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.imc.framework.bean.MobilePhoneToProtections" table="mobile_phone_to_protections" catalog="mobilephones">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mobileDisplayProtection" class="com.imc.framework.bean.MobileDisplayProtection" fetch="select" cascade="all">
+            <column name="protection_id" />
+        </many-to-one>
+        <many-to-one name="mobilePhones" class="com.imc.framework.bean.MobilePhones" fetch="select" cascade="all">
+            <column name="phone_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

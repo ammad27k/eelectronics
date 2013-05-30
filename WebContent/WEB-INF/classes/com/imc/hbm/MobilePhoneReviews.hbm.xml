@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 23, 2013 11:59:21 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.imc.framework.bean.MobilePhoneReviews" table="mobile_phones_reviews" catalog="mobilephones">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mobilePhones" class="com.imc.framework.bean.MobilePhones" fetch="select" cascade="all">
+            <column name="phone_id" />
+        </many-to-one>
+        <property name="reviewsDesc" type="string">
+            <column name="reviews_desc" length="256" />
+        </property>
+        <property name="isActive" type="char">
+            <column name="is_active" length="1" not-null="true" />
+        </property>
+        <property name="isDeleted" type="char">
+            <column name="is_deleted" length="1" not-null="true" />
+        </property>
+        
+        <property name="name" type="string">
+            <column name="name" length="20" not-null="true" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

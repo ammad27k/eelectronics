@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 6, 2013 10:49:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.imc.framework.bean.MobilePhones" table="mobile_phones" catalog="mobilephones">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="mobileBluetooth" class="com.imc.framework.bean.MobileBluetooth" fetch="select" cascade="all">
+            <column name="bluetooth_id" />
+        </many-to-one>
+        <many-to-one name="mobileGps" class="com.imc.framework.bean.MobileGps" fetch="select" cascade="all">
+            <column name="gps_id" />
+        </many-to-one>
+        <many-to-one name="mobileChipsets" class="com.imc.framework.bean.MobileChipsets" fetch="select" cascade="all">
+            <column name="chipset_id" />
+        </many-to-one>
+        <many-to-one name="mobileEdge" class="com.imc.framework.bean.MobileEdge" fetch="select" cascade="all">
+            <column name="edge_id" />
+        </many-to-one>
+        <many-to-one name="mobileGpu" class="com.imc.framework.bean.MobileGpu" fetch="select" cascade="all">
+            <column name="gpu_id" />
+        </many-to-one>
+        <many-to-one name="mobileUsb" class="com.imc.framework.bean.MobileUsb" fetch="select" cascade="all">
+            <column name="usb_id" />
+        </many-to-one>
+        <many-to-one name="mobileWlan" class="com.imc.framework.bean.MobileWlan" fetch="select" cascade="all">
+            <column name="wlan_id" />
+        </many-to-one>
+        <many-to-one name="mobileCpu" class="com.imc.framework.bean.MobileCpu" fetch="select" cascade="all">
+            <column name="cpu_id" />
+        </many-to-one>
+        <many-to-one name="mobileGprs" class="com.imc.framework.bean.MobileGprs" fetch="select" cascade="all">
+            <column name="gprs_id" />
+        </many-to-one>
+        <many-to-one name="mobileOs" class="com.imc.framework.bean.MobileOs" fetch="select" cascade="all">
+            <column name="os_id" />
+        </many-to-one>
+        <property name="gsmarenaId" type="long">
+            <column name="gsmarena_id" not-null="true" />
+        </property>
+        <property name="brandId" type="java.lang.Long">
+            <column name="brand_id" />
+        </property>
+        <property name="slug" type="string">
+            <column name="slug" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="simTypeId" type="java.lang.Long">
+            <column name="sim_type_id" />
+        </property>
+        <property name="announcementDate" type="date">
+            <column name="announcement_date" length="10" />
+        </property>
+        <property name="releaseDate" type="date">
+            <column name="release_date" length="10" />
+        </property>
+        <property name="dimensions" type="string">
+            <column name="dimensions" />
+        </property>
+        <property name="weight" type="string">
+            <column name="weight" />
+        </property>
+        <property name="displaySize" type="string">
+            <column name="display_size" />
+        </property>
+        <property name="displayMultitouch" type="java.lang.Character">
+            <column name="display_multitouch" length="1" />
+        </property>
+        <property name="soundLoudspeaker" type="java.lang.Character">
+            <column name="sound_loudspeaker" length="1" />
+        </property>
+        <property name="sound35mmjack" type="java.lang.Character">
+            <column name="sound_35mmjack" length="1" />
+        </property>
+        <property name="phonebook" type="string">
+            <column name="phonebook" not-null="true" />
+        </property>
+        <property name="callRecords" type="string">
+            <column name="call_records" not-null="true" />
+        </property>
+        <property name="battery" type="string">
+            <column name="battery" />
+        </property>
+        <property name="standbyTime" type="string">
+            <column name="standby_time" />
+        </property>
+        <property name="talkTime" type="string">
+            <column name="talk_time" />
+        </property>
+        <property name="musicPlay" type="string">
+            <column name="music_play" />
+        </property>
+        <property name="photoUrl" type="string">
+            <column name="photo_url" not-null="true" />
+        </property>
+        <property name="shortDesc" type="string">
+            <column name="short_desc" />
+        </property>
+        <property name="fullDesc" type="string">
+            <column name="full_desc" />
+        </property>
+        <property name="isSpecial" type="java.lang.Character">
+            <column name="is_special" length="1" />
+        </property>
+        <property name="isFeatured" type="java.lang.Character">
+            <column name="is_featured" length="1" />
+        </property>
+        <property name="addedOn" type="timestamp" generated="insert">
+            <column name="added_on" length="19" />
+        </property>
+        <property name="isActive" type="java.lang.Character">
+            <column name="is_active" length="1" />
+        </property>
+        <property name="isDeleted" type="java.lang.Character">
+            <column name="is_deleted" length="1" />
+        </property>
+        <set name="mobilePhoneToDataSpeedses" table="mobile_phone_to_data_speeds" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToDataSpeeds" />
+        </set>
+        <set name="mobilePhoneToAlertTypeses" table="mobile_phone_to_alert_types" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToAlertTypes" />
+        </set>
+        <set name="mobilePhoneToNetworkses" table="mobile_phone_to_networks" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToNetworks"/>
+        </set>
+        <set name="mobilePhoneToMessagings" table="mobile_phone_to_messaging" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToMessaging" />
+        </set>
+        <set name="mobilePhoneToCameraFeatureses" table="mobile_phone_to_camera_features" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToCameraFeatures" />
+        </set>
+        <set name="mobilePhoneToBrowserses" table="mobile_phone_to_browsers" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToBrowsers" />
+        </set>
+        <set name="mobilePhoneToColorses" table="mobile_phone_to_colors" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToColors" />
+        </set>
+        <set name="mobilePhoneToProtectionses" table="mobile_phone_to_protections" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToProtections" />
+        </set>
+        <set name="mobilePhoneToCameraPrimaries" table="mobile_phone_to_camera_primary" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToCameraPrimary" />
+        </set>
+        <set name="mobilePhoneToNfcs" table="mobile_phone_to_nfc" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToNfc" />
+        </set>
+        <set name="mobilePhoneToMemories" table="mobile_phone_to_memory" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToMemory" />
+        </set>
+        <set name="mobilePhoneToDisplayTypeses" table="mobile_phone_to_display_types" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToDisplayTypes" />
+        </set>
+        <set name="mobilePhoneToMemoryCardslotses" table="mobile_phone_to_memory_cardslots" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToMemoryCardslots" />
+        </set>
+        <set name="mobilePhoneToJavas" table="mobile_phone_to_java" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToJava" />
+        </set>
+        <set name="mobilePhoneToSensorses" table="mobile_phone_to_sensors" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToSensors" />
+        </set>
+        <set name="mobilePhoneToRadios" table="mobile_phone_to_radio" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToRadio" />
+        </set>
+        <set name="mobilePhoneToGameses" table="mobile_phone_to_games" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToGames" />
+        </set>
+        <set name="mobilePhoneToFeatureses" table="mobile_phone_to_features" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToFeatures" />
+        </set>
+        <set name="mobilePhoneToCameraVideos" table="mobile_phone_to_camera_video" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToCameraVideo" />
+        </set>
+        <set name="mobilePhoneToSoundFeatureses" table="mobile_phone_to_sound_features" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToSoundFeatures" />
+        </set>
+        <set name="mobilePhoneToCameraSecondaries" table="mobile_phone_to_camera_secondary" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToCameraSecondary" />
+        </set>
+        
+        <set name="mobilePhoneReviews" table="mobile_phone_reviews" inverse="true" lazy="false" fetch="select" cascade="all">
+            <key>
+                <column name="phone_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneReviews" />
+        </set>
+    </class>
+</hibernate-mapping>

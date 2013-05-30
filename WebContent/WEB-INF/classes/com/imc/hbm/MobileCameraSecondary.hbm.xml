@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 6, 2013 10:49:21 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.imc.framework.bean.MobileCameraSecondary" table="mobile_camera_secondary" catalog="mobilephones">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="isActive" type="java.lang.Character">
+            <column name="is_active" length="1" />
+        </property>
+        <property name="isDeleted" type="java.lang.Character">
+            <column name="is_deleted" length="1" />
+        </property>
+        <set name="mobilePhoneToCameraSecondaries" table="mobile_phone_to_camera_secondary" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="secondary_id" />
+            </key>
+            <one-to-many class="com.imc.framework.bean.MobilePhoneToCameraSecondary" />
+        </set>
+    </class>
+</hibernate-mapping>
